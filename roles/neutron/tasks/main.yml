@@ -1,4 +1,4 @@
-- name: Install Glance
+- name: Install Neutron
   apt:
     name:
       - glance
