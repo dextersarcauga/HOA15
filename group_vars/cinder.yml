@@ -1,0 +1,5 @@
+cinder_package: "cinder-api"
+cinder_config_file: "/etc/cinder/cinder.conf"
+cinder_db_connection: "mysql+pymysql://cinder:password@controller/cinder"
+cinder_volume_group: "cinder-volumes"
+cinder_volume_driver: "lvm"

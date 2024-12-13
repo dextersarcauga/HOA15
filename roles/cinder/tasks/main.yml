@@ -1,10 +1,11 @@
-- name: Install Cinder
+---
+- name: Install Cinder packages
   apt:
-    name:
-      - nova-compute
-      - python3-openstackclient
-    state: latest
-    update_cache: yes
-  when: ansible_distribution == "Ubuntu"
+    name: "{{ cinder_package }}"
+    state: present
 
+- name: Configure Cinder
+  template:
+    src: "cinder.conf.j2"
+    dest: "{{ cinder_config_file }}"
 

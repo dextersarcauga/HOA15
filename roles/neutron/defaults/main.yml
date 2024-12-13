@@ -1,0 +1,11 @@
+# Default variables for Neutron role
+
+neutron_package: "neutron-server"
+neutron_config_file: "/etc/neutron/neutron.conf"
+neutron_db_connection: "mysql+pymysql://neutron:password@controller/neutron"
+neutron_plugin: "ml2"
+neutron_type_drivers: "flat,vlan"
+neutron_tenant_network_type: "vlan"
+neutron_network_vlan_ranges: "physnet1:1000:2000"
+neutron_ml2_mechanism_drivers: "openvswitch"
+neutron_service_plugins: "router"

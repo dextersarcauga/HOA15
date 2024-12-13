@@ -1,10 +1,19 @@
-- name: Install Neutron
+---
+# Tasks to install, configure, and manage Neutron
+
+- name: Install Neutron packages
   apt:
-    name:
-      - glance
-    state: latest
-    update_cache: yes
-  when: ansible_distribution == "Ubuntu"
+    name: "{{ neutron_package }}"
+    state: present
 
+- name: Configure Neutron
+  template:
+    src: "neutron.conf.j2"
+    dest: "{{ neutron_config_file }}"
 
+- name: Start and enable Neutron service
+  service:
+    name: "{{ neutron_package }}"
+    state: started
+    enabled: yes
 

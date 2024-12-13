@@ -1,0 +1,13 @@
+[DEFAULT]
+core_plugin = {{ neutron_plugin }}
+service_plugins = {{ neutron_service_plugins }}
+allow_overlapping_ips = True
+
+[DATABASE]
+connection = {{ neutron_db_connection }}
+
+[ml2]
+type_drivers = {{ neutron_type_drivers }}
+tenant_network_types = {{ neutron_tenant_network_type }}
+network_vlan_ranges = {{ neutron_network_vlan_ranges }}
+mechanism_drivers = {{ neutron_ml2_mechanism_drivers }}
