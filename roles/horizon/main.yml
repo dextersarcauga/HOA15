@@ -1,4 +1,4 @@
-- name: Install Keystone
+- name: Install Horizon
   apt:
     name:
       - keystone
